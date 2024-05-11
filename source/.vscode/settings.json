@@ -1,0 +1,53 @@
+{
+  "editor.formatOnSave": true,
+  "editor.mouseWheelZoom": true,
+  "files.associations": {
+    "lib1.h": "c",
+    "string": "c",
+    "format": "c",
+    "array": "c",
+    "string_view": "c",
+    "initializer_list": "c",
+    "span": "c",
+    "valarray": "c",
+    "system_error": "c",
+    "zhelpers.h": "c",
+    "stdbool.h": "c",
+    "fcntl.h": "c",
+    "list": "c",
+    "ctype.h": "c",
+    "charconv": "c",
+    "chrono": "c",
+    "optional": "c",
+    "ratio": "c",
+    "functional": "c",
+    "tuple": "c",
+    "type_traits": "c",
+    "utility": "c",
+    "variant": "c",
+    "assert.h": "c",
+    "stdlib.h": "c",
+    "string.h": "c",
+    "stat.h": "c",
+    "types.h": "c",
+    "remote-char.h": "c",
+    "cstdlib": "c",
+    "thread": "c",
+    "ncurses.h": "c",
+    "lizardnroach.h": "c",
+    "global.h": "c",
+    "stdio.h": "c",
+    "unistd.h": "c",
+    "clients.h": "c",
+    "pthread.h": "c",
+    "bots-proto.pb-c.h": "c"
+  },
+  "C_Cpp.errorSquiggles": "disabled",
+  "makefile.launchConfigurations": [
+    {
+      "cwd": "/home/QQueke/Documents/Lectures/PSis/PSisProject/source",
+      "binaryPath": "/home/QQueke/Documents/Lectures/PSis/PSisProject/source/server",
+      "binaryArgs": []
+    }
+  ]
+}

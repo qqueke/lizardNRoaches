@@ -1,0 +1,102 @@
+syntax = "proto2";  // Set syntax to proto2
+
+enum Direction {
+  UP = 0;
+  DOWN = 1;
+  LEFT = 2;
+  RIGHT = 3;
+}
+
+enum MessageType {
+  CONNECT = 0;
+  MOVEMENT = 1;
+  DISCONNECT = 2;
+  REQUEST = 3;
+}
+
+enum ClientType
+{
+    LIZARD = 0;
+    ROACH = 1;
+    WASP = 2;
+} 
+
+enum Response {
+  SUCCESS = 0;
+  NOTHING = 1;
+  FAILURE = 2;
+  TIMEOUT = 3;
+}
+
+message Header_Message {
+  required ClientType client_type = 1;
+  required MessageType msg_type = 2;
+}
+
+message Proto_Display_Message {
+  required uint32 ch = 1;
+  required int64 pos_x = 2;
+  required int64 pos_y = 3;
+}
+
+message Roach_Connect_Req {
+  repeated uint32 roach_digit = 1; // array of digit of the roaches controlled by the client
+}
+
+message Wasp_Connect_Req {
+  required uint32 num_wasps = 1; // number of wasps controlled by the client
+}
+
+message Bot_Connect_Resp {
+  repeated uint32 bot_id = 1; // array of id of the bots controlled by the client
+  required uint64 token = 2;
+  required uint32 client_id = 3;
+}
+
+message Bot_Movement_Req {
+  required uint32 bot_id = 1;
+  required uint64 token = 2;
+  required Direction direction = 3;
+  required uint32 client_id = 4;
+}
+
+message Bot_Movement_Resp {
+  required Response resp = 1;
+}
+
+message Bot_Disconnect_Req {
+  required uint32 client_id = 1;
+  required uint64 token = 2;
+}
+
+message Bot_Disconnect_Resp {
+  required Response resp = 1;
+}
+
+message Lizard_Connect_Req {
+  optional bytes null = 1;
+}
+
+message Lizard_Connect_Resp {
+  required bytes ch = 1;
+  required uint64 token = 2;
+}
+
+message Lizard_Movement_Req {
+  required bytes ch = 1;
+  required uint64 token = 2;
+  required Direction direction = 3;
+}
+
+message Lizard_Movement_Resp {
+  required Response resp = 1;
+}
+
+message Lizard_Disconnect_Req {
+  required bytes ch = 1;
+  required uint64 token = 2;
+}
+
+message Lizard_Disconnect_Resp {
+  required uint64 score = 1;
+}
